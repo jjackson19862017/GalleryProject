@@ -5,8 +5,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../index.php">Visit Home Page <?php if($connection) {
-	                        echo "<i class='fa fa-plug' aria-hidden='true'></i>";
+                <a class="navbar-brand" href="../index.php">Visit Home Page <?php if(!$connection) {
+	                        echo "<i class='fa fa-exclamation-triangle' aria-hidden='true'></i>";
 	                        }
                         ?></a>
             </div>

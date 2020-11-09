@@ -25,7 +25,15 @@
                             <small>Subheading</small>
                         </h1>
                         
-                        
+                        <?php 
+	                        // Test Connection to the Users Database
+	                        $sql = "SELECT * FROM users WHERE id=1";
+	                        $result = $database->query($sql);
+	                        $user_found = mysqli_fetch_array($result);
+	                        echo $user_found['username'];
+	                        
+	                        
+                        ?>
                         <ol class="breadcrumb">
                             <li>
                                 <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
