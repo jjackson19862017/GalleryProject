@@ -1,0 +1,40 @@
+<?php 
+	require_once("new_config.php");
+	class Database {
+		public $connection;
+		function __construct(){
+			$this->connection = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
+			if(mysqli_connect_errno()) {
+				die("Database not connected" . mysqli_error());
+			}
+		}
+	}
+	$database = new Database();
+	
+	
+	public function query($sql) {
+		
+		$result = mysqli_query($this->connection, $sql);
+		confirm_query($result);	
+		return $result;
+		
+		
+	}
+	
+	private function confirm_query($result) {
+		if(!$result){
+			die("Query Failed");
+		}
+
+		
+	}
+	
+	public function escape_string($string){
+		$escaped_string = mysqli_real_escape_string($this->connection, $string);
+		return $escaped_string;
+	}
+	
+	
+	
+	
+?>
