@@ -68,6 +68,18 @@ class User {
         return $properties;
     }
 
+    // Escapes all the Strings from our properties
+    protected function clean_properties() {
+        global $database;
+
+        $clean_properties = array();
+
+        foreach ($this->properties() as $key => $value) {
+            $clean_properties[$key] = $database->escape_string($value);
+        }
+        return $clean_properties;
+    }
+
     // Create the Querys to be made into Objects.
     public static function find_all_users() {
       return self::find_this_query("SELECT * FROM users");
@@ -79,7 +91,7 @@ class User {
         return !empty($the_result_array) ? array_shift($the_result_array) : false ; 
     }
 
-    
+    // If the data doesn't exist, Create it or Update it
     public function save() {
         return isset($this->id) ? $this->update() : $this->create();
     }
@@ -87,7 +99,7 @@ class User {
     public function create() {
         global $database;
 
-        $properties = $this->properties();
+        $properties = $this->clean_properties();
 
         $sql = "INSERT INTO " . self::$db_table . "(" . implode(",", array_keys($properties)) .")";
         $sql.= "VALUES ('" . implode("','", array_values($properties)) . "')";
@@ -103,7 +115,7 @@ class User {
     public function update() {
         global $database;
 
-        $properties = $this->properties();
+        $properties = $this->clean_properties();
         $properties_pairs = array();
         // This stops us having to type our each update field and values
         foreach ($properties as $key => $value) {

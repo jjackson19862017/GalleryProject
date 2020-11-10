@@ -38,13 +38,13 @@
                         $user->create();*/
 
                         // Update User
-                        
-                        $user = User::find_user_by_id(11);
+                        /*
+                        $user = User::find_user_by_id(4);
                         $user->username     = "Loser";
                         $user->password     = "dad";                        
                         $user->first_name   = "Barry";                        
                         $user->last_name    = "Jackson";                        
-                        $user->update(); 
+                        $user->update(); */
 
                         //Detele User
                         /*
