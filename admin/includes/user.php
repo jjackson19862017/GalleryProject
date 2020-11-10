@@ -59,9 +59,7 @@ class User {
 
     // This gets all the keys and column names from our table
     protected function properties() {
-        
         $properties = array();
-
         foreach (self::$db_table_fields as $db_field) {
             if(property_exists($this, $db_field)) {
                 $properties[$db_field] = $this->$db_field;
@@ -105,11 +103,15 @@ class User {
     public function update() {
         global $database;
 
+        $properties = $this->properties();
+        $properties_pairs = array();
+        // This stops us having to type our each update field and values
+        foreach ($properties as $key => $value) {
+            $properties_pairs[] = "{$key}='{$value}'";
+        }
+
         $sql = "UPDATE " . self::$db_table . " SET ";
-        $sql.= "username = '"   . $database->escape_string($this->username)     . "', ";
-        $sql.= "password = '"   . $database->escape_string($this->password)     . "', ";
-        $sql.= "first_name = '" . $database->escape_string($this->first_name)   . "', ";
-        $sql.= "last_name = '"  . $database->escape_string($this->last_name)    . "' ";
+        $sql.= implode(", ", $properties_pairs);
         $sql.= " WHERE id= "    . $database->escape_string($this->id);
 
         $database->query($sql);
