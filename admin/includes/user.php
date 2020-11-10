@@ -42,7 +42,7 @@ class User {
 
         foreach($the_record as $the_attribute => $value) {
             if($the_object->has_the_attribute($the_attribute)) {
-                $the_object->the_attribute = $value;
+                $the_object->$the_attribute = $value;
             }
         }
 
