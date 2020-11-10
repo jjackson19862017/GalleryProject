@@ -46,6 +46,8 @@
                         $user->last_name    = "Jackson";                        
                         $user->update(); */
 
+                        $user = User::find_user_by_id(6);
+                        $user->delete();
                         ?>
                         <ol class="breadcrumb">
                             <li>
