@@ -46,8 +46,23 @@
                         $user->last_name    = "Jackson";                        
                         $user->update(); */
 
+                        //Detele User
+                        /*
                         $user = User::find_user_by_id(6);
-                        $user->delete();
+                        $user->delete(); */
+
+                        // Smart Update function
+                        /*
+                        $user = User::find_user_by_id(3);
+                        $user->username = "dad";
+                        $user->save(); */
+                        
+                        // Smart Create function
+                        /*
+                        $user = new User();
+                        $user->username = "Bob";
+                        $user->save(); */
+
                         ?>
                         <ol class="breadcrumb">
                             <li>

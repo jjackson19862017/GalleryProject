@@ -64,6 +64,9 @@ class User {
     }
 
     
+    public function save() {
+        return isset($this->id) ? $this->update() : $this->create();
+    }
 
     public function create() {
         global $database;
