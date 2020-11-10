@@ -1,21 +1,25 @@
 <?php 
 
+// Defining Constants for Directory Structures
+defined('DS') ? null : define('DS', DIRECTORY_SEPARATOR);
+define('SITE_ROOT', DS . 'Applications' . DS . 'XAMPP' . DS . 'xamppfiles' . DS . 'htdocs' . DS . 'gallery');
 
-function __autoload($class){
+defined('INCLUDES_PATH') ? null : define('INCLUDES_PATH', SITE_ROOT.DS.'admin'.DS.'includes');
+
+function classAutoLoader($class){
 
     $class = strtolower($class);
-    $the_path = "includes/{$class}.php";
+    $the_path = INCLUDES_PATH . "{$class}.php";
 
-
-    if(file_exists($the_path))
-    {
-        require_once($the_path);
-    } else {
+        if(is_file($the_path) && !class_exists($class)) {
+            include $the_path;
+        } else {
         die("This filename {$class}.php was not found");
     }
 
 }
 
+spl_autoload_register('classAutoLoader');
 
 
 ?>
