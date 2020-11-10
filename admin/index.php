@@ -32,10 +32,8 @@
                                 echo $row['username'] . "<br>";
                                 }
 	                        // Challenge to Find User By Id
-                                $result_set = User::find_user_by_id(1);
-                                while($row = mysqli_fetch_array($result_set)) {
-                                    echo $row['username'] . "<br>";
-                                    }
+                                $found_user = User::find_user_by_id(1);
+                                echo $found_user['username'];
 	                        
 	                        
                         ?>
