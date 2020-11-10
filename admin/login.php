@@ -5,6 +5,8 @@
 // If user is signed in goto Admin Index Page
 if($session->is_signed_in()) { redirect("index.php"); }
 
+$the_message = "";
+
 if(isset($_POST['submit'])) {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
@@ -23,6 +25,7 @@ if(isset($_POST['submit'])) {
     // If the Fields are blank, then set the variables to avoid an error.
     $username = "";
     $password = "";
+    $the_message = "";
 }
 
 
@@ -32,7 +35,7 @@ if(isset($_POST['submit'])) {
 
 <div class="col-md-4 col-md-offset-3 well">
 
-<h4 class="bg-danger"><?php echo $the_message; ?></h4>
+<h4 class="bg-danger text-center"><?php echo $the_message; ?></h4>
 	
 <form id="login-id" action="" method="post">
 	
