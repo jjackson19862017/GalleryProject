@@ -32,9 +32,9 @@
                                 echo $row['username'] . "<br>";
                                 }
 	                        // Challenge to Find User By Id
-                                $found_user = User::find_user_by_id(1);
+                            /*    $found_user = User::find_user_by_id(1);
                                 $user = User::instantation($found_user);
-                                echo $user->username;
+                                echo $user->username;*/
 
 	                        
 	                        
