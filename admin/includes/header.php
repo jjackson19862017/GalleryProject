@@ -1,18 +1,6 @@
 <?php ob_start(); ?>
 <?php require_once("init.php");?>
 
-<?php
-// Checks to see if the user is logged in
-if(!$session->is_signed_in()) { redirect("login.php");} 
-
-
-
-?>
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
