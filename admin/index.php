@@ -26,14 +26,16 @@
                         </h1>
                         
                         <?php 
-                            
-                            $user = new User();
-                            $result_set = $user->find_all_users();
+                            // Runs a query to return a result
+                            $result_set = User::find_all_users();
                             while($row = mysqli_fetch_array($result_set)) {
                                 echo $row['username'] . "<br>";
                                 }
-	                        
-	                        
+	                        // Challenge to Find User By Id
+                                $result_set = User::find_user_by_id(1);
+                                while($row = mysqli_fetch_array($result_set)) {
+                                    echo $row['username'] . "<br>";
+                                    }
 	                        
 	                        
                         ?>
