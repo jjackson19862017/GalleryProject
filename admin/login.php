@@ -5,8 +5,6 @@
 // If user is signed in goto Admin Index Page
 if($session->is_signed_in()) { redirect("index.php"); }
 
-$the_message = "";
-
 if(isset($_POST['submit'])) {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);

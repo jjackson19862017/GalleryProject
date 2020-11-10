@@ -4,11 +4,33 @@ class Session {
 
     private $signed_in = false;
     public $user_id;
+    public $message;
+
 
     // Auto starts a session each time its run
     function __construct(){
         session_start();
         $this->check_the_login();
+        $this->check_message();
+    }
+
+    // Enables to give the user feedback on what has happened
+    public function message($msg="") {
+        if(!empty($msg)) {
+            $_SESSION['message'] = $msg;
+        } else {
+            return $this->message;
+        }
+    }
+
+    // Checks to see if the message is set
+    private function check_message() {
+        if(isset($_SESSION['message'])) {
+            $this->message = $_SESSION['message'];
+            unset($_SESSION['message']); // Stops the message from repeating if we refresh the page
+        } else {
+            $this->message = ""; // Sets it to empty to prevent errors
+        }
     }
 
     // Returns a True or False value depending on if the user is logged in or not
