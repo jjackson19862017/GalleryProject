@@ -58,7 +58,7 @@ class Photo extends Db_object {
                 return false;
             }
 
-            $target_path = IMAGES_PATH;
+            $target_path = IMAGES_PATH . DS . $this->filename;
             
             if(file_exists($target_path)) {
                 $this->errors[] = "The file {$this->filename} already exists";
