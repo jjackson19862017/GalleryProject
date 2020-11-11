@@ -39,21 +39,21 @@
 
                         // Update User
                         /*
-                        $user = User::find_user_by_id(4);
+                        $user = User::find_by_id(4);
                         $user->username     = "Loser";
                         $user->password     = "dad";                        
                         $user->first_name   = "Barry";                        
                         $user->last_name    = "Jackson";                        
                         $user->update(); */
 
-                        //Detele User
+                        //Delete User
                         /*
-                        $user = User::find_user_by_id(6);
+                        $user = User::find_by_id(6);
                         $user->delete(); */
 
                         // Smart Update function
                         /*
-                        $user = User::find_user_by_id(3);
+                        $user = User::find_by_id(3);
                         $user->username = "dad";
                         $user->save(); */
                         

@@ -96,7 +96,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php  $found_user = User::find_user_by_id(1);
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php  $found_user = User::find_by_id(1);
                                 $user = User::instantation($found_user);
                                 echo $user->username;?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
