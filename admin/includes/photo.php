@@ -43,6 +43,10 @@ class Photo extends Db_object {
         }
     } // End set_file
 
+    public function picture_path() {
+        return $this->upload_directory.DS.$this->filename;
+    }
+
     public function save() {
 
         if($this->photo_id) {
@@ -59,7 +63,7 @@ class Photo extends Db_object {
             }
 
             $target_path = IMAGES_PATH . DS . $this->filename;
-            
+
             if(file_exists($target_path)) {
                 $this->errors[] = "The file {$this->filename} already exists";
                 return false;
