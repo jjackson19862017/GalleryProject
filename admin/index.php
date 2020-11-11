@@ -63,6 +63,12 @@
                         $user->username = "Bob";
                         $user->save(); */
 
+                        // Find All Users
+                        $users = User::find_all();
+                        foreach ($users as $user) {
+                            echo $user->username . "<br>";
+                        }
+
                         ?>
                         <ol class="breadcrumb">
                             <li>
