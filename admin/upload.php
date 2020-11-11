@@ -2,6 +2,22 @@
 
 <?php if(!$session->is_signed_in()) { redirect("login.php");} // Checks to see if the user is logged in ?>
 
+<?php
+
+$message = '';
+
+// Function for uploading photos to the gallery
+if(isset($_POST['submit'])) {
+    $photo = new Photo();
+    $photo->title = $_POST['title'];
+    $photo->set_file($_FILES['file_upload']);
+
+    if($photo->save()) {
+        $message = "Photo uploaded Successfully";
+    } else {
+        $message = join("<br>", $photo->errors);
+    }
+}
 
 
 
@@ -9,8 +25,7 @@
 
 
 
-
-
+?>
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -33,7 +48,7 @@
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             Upload
-                            <small>Subheading</small>
+                            <small><?php echo $message ?></small>
                         </h1>
                         <div class="col-md-6">
                         <form action="upload.php" enctype="multipart/form-data" method="post" class="well">

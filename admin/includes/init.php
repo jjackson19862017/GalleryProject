@@ -8,6 +8,7 @@ defined('INCLUDES_PATH') ? null : define('INCLUDES_PATH', SITE_ROOT.DS.'admin'.D
 defined('IMAGES_PATH') ? null : define('IMAGES_PATH', SITE_ROOT.DS.'admin'.DS.'images');
 
 
+
 // Require once is more secure than includes
 require_once("functions.php");
 require_once("new_config.php");

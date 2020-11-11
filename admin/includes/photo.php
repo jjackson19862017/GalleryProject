@@ -16,7 +16,7 @@ class Photo extends Db_object {
     public $errors = array();
     public $upload_errors_array = array(
         UPLOAD_ERR_OK          =>"There was no error",
-        UPLOAD_ERR_INI_SIZE    =>"There is erron in ini size",
+        UPLOAD_ERR_INI_SIZE    =>"There is error in ini size",
         UPLOAD_ERR_FORM_SIZE   =>"There is error in form size",
         UPLOAD_ERR_PARTIAL     =>"The uploaded file was only partially uploaded",
         UPLOAD_ERR_NO_FILE     =>"There is no file was uploaded",
@@ -37,7 +37,7 @@ class Photo extends Db_object {
             return false;
         } else { // If there are no errors then set the following variables 
             $this->filename = basename($file['name']);  // Basename cleans up the incoming filename
-            $this->tmp_path = $file['tmp_path'];
+            $this->tmp_path = $file['tmp_name'];
             $this->type     = $file['type'];
             $this->size     = $file['size'];
         }
@@ -53,12 +53,12 @@ class Photo extends Db_object {
                 return false; // This means we have an error.
             }
 
-            if(empty($this-filename) || empty($this->tmp_path)) {
+            if(empty($this->filename) || empty($this->tmp_path)) {
                 $this->errors[] = "The file was not available";
                 return false;
             }
 
-            $target_path = IMAGES_PATH . DS . $this->filename;
+            $target_path = IMAGES_PATH;
             
             if(file_exists($target_path)) {
                 $this->errors[] = "The file {$this->filename} already exists";

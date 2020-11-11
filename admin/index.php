@@ -89,6 +89,7 @@
 
                         // Show Path Directory
                         // echo INCLUDES_PATH;
+                        echo SITE_ROOT;
                         ?>
                         <ol class="breadcrumb">
                             <li>
