@@ -75,18 +75,7 @@ class Photo extends Db_object {
                     return false;
                 }
             }
-
-           
-            
-
         }
-
-
-
     }
-
-
-
-
 } // End of Photo Class
 ?>
