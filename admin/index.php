@@ -70,6 +70,21 @@
                             echo $user->id . " -> " . $user->username . "<br>";
                         } */
 
+                        // Create a New Photo
+                        
+                        $photo = new Photo();
+                        $photo->title = "Bazza";
+                        $photo->description = "dad";                        
+                        $photo->filename = "Barry";                        
+                        $photo->type = "jpg";
+                        $photo->size = 100;                        
+                        $photo->create();
+
+                        // Find All Photos
+                        $photos = Photo::find_all();
+                        foreach ($photos as $photo) {
+                            echo $photo->photo_id . " -> " . $photo->title . "<br>";
+                        } 
                         ?>
                         <ol class="breadcrumb">
                             <li>

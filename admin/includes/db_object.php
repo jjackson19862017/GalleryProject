@@ -78,7 +78,7 @@ class Db_object {
 
         $properties = $this->clean_properties();
 
-        $sql = "INSERT INTO " . static::$db_table . "(" . implode(",", array_keys($properties)) .")";
+        $sql = "INSERT INTO " . static::$db_table . "(" . implode(",", array_keys($properties)) .") ";
         $sql.= "VALUES ('" . implode("','", array_values($properties)) . "')";
 
         if($database->query($sql)) {
