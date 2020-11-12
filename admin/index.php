@@ -70,6 +70,12 @@
                             echo $user->id . " -> " . $user->username . "<br>";
                         } */
 
+                        // Find User by Id
+                        /*
+                        $user = User::find_by_id(11);
+                        echo $user->id . " -> " . $user->username . "<br>";
+                        */
+
                         // Create a New Photo
                         /*
                         $photo = new Photo();
@@ -84,21 +90,20 @@
                         /*
                         $photos = Photo::find_all();
                         foreach ($photos as $photo) {
-                            echo $photo->photo_id . " -> " . $photo->title . "<br>";
-                        } */
+                            echo $photo->id . " -> " . $photo->title . "<br>";
+                        } 
+                        */
 
+                        // Find Photo by Id
+                        /*
+                        $photo = Photo::find_by_id(4);
+                        echo $photo->id . " -> " . $photo->title . "<br>";
+                        /*
+                        
                         // Show Path Directory
                         // echo INCLUDES_PATH;
-                        echo SITE_ROOT;
+                        // echo SITE_ROOT;
                         ?>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-file"></i> Blank Page
-                            </li>
-                        </ol>
                     </div>
                 </div>
                 <!-- /.row -->
