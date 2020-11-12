@@ -80,6 +80,18 @@ class Photo extends Db_object {
                 }
             }
         }
+    } // End of Save Class
+
+    public function delete_photo() {
+        if($this->delete()) {
+            $target_path = IMAGES_PATH . DS . $this->filename;
+            return unlink($target_path) ? true : false;
+        } else {
+            return false;
+        }
     }
+    
+
+
 } // End of Photo Class
 ?>

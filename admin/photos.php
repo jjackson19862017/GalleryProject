@@ -46,9 +46,9 @@
                                     <tr>
                                     <td><img style="height: 100px;" class="img-thumbnail" src="<?php echo $photo->picture_path(); ?>" alt="">
                                     <div class="pictures_link">
-                                    <a href="delete_photo.php/?id=<?php echo $photo->id;?>">Delete</a>
-                                    <a href="edit_photo.php/?id=<?php echo $photo->id;?>">Edit</a>
-                                    <a href="view_photo.php/?id=<?php echo $photo->id;?>">View</a>
+                                    <a class="btn btn-danger" href="delete_photo.php/?id=<?php echo $photo->id;?>"><i class="fa fa-trash-o"></i></a>
+                                    <a class="btn btn-primary" href="edit_photo.php/?id=<?php echo $photo->id;?>"><i class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-success" href="view_photo.php/?id=<?php echo $photo->id;?>"><i class="fa fa-eye"></i></a>
                                     </div></td>
                                     <td><?php echo $photo->id; ?></td>
                                     <td><?php echo $photo->filename; ?></td>
