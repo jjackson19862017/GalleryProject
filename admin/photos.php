@@ -44,7 +44,12 @@
                                     $photos = Photo::find_all();
                                     foreach ($photos as $photo) : ?>
                                     <tr>
-                                    <td><img style="height: 100px;" class="img-thumbnail" src="<?php echo $photo->picture_path(); ?>" alt=""></td>
+                                    <td><img style="height: 100px;" class="img-thumbnail" src="<?php echo $photo->picture_path(); ?>" alt="">
+                                    <div class="pictures_link">
+                                    <a href="delete_photo.php/?id=<?php echo $photo->photo_id;?>">Delete</a>
+                                    <a href="edit_photo.php/?id=<?php echo $photo->photo_id;?>">Edit</a>
+                                    <a href="view_photo.php/?id=<?php echo $photo->photo_id;?>">View</a>
+                                    </div></td>
                                     <td><?php echo $photo->photo_id; ?></td>
                                     <td><?php echo $photo->filename; ?></td>
                                     <td><?php echo $photo->title; ?></td>
