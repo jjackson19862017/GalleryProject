@@ -103,7 +103,7 @@
                         // Show Path Directory
                         // echo INCLUDES_PATH;
                         // echo SITE_ROOT;
-                        ?>
+                        */?>
                     </div>
                 </div>
                 <!-- /.row -->

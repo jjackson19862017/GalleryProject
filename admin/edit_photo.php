@@ -2,9 +2,25 @@
 
 <?php if(!$session->is_signed_in()) { redirect("login.php");} // Checks to see if the user is logged in ?>
 
-<?php if(isset($_POST['update'])) {
-    echo "yes it works.";
-}
+<?php
+
+    if(empty($_GET['id'])) {
+        redirect("photos.php"); // If the get request is empty send them back to photos
+    } else {
+    $photo = Photo::find_by_id($_GET['id']);
+    }
+
+
+    if(isset($_POST['update'])) {
+        if($photo) {
+            $_POST['title'];
+            $_POST['caption'];
+            $_POST['alternative_text'];
+            $_POST['description'];
+
+        }
+
+    }
     ?>
 
         <!-- Navigation -->
