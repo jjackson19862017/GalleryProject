@@ -46,7 +46,7 @@
                                 Add user
                                 <small>Subheading</small>
                             </h1>
-                            <div class="col-md-6 col-md-offset-3">
+                            <div class="col-md-6 col-md-offset-3"> <!-- Centers the form on the center of the screen -->
                                
                                 <div class="form-group">
                                     <label for="user_image">User Image</label>
@@ -54,11 +54,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="username">Username</label>
-                                    <input type="text" name="username" class="form-control" id="" autocomplete="off">
+                                    <input type="text" name="username" class="form-control" id="">
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password</label>
-                                    <input type="password" name="password" class="form-control" id="" autocomplete="off">
+                                    <input type="password" name="password" class="form-control" id="">
                                 </div>
                                 <div class="form-group">
                                     <label for="first_name">First Name</label>
