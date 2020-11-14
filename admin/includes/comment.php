@@ -24,7 +24,7 @@ class Comment extends Db_object {
         }
     } // End of create_comment
 
-    public static function find_the_comments($photo_id=0) {
+    public static function find_the_comments($photo_id) {
 
         global $database;
 
