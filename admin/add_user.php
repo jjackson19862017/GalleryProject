@@ -5,18 +5,20 @@
 <?php
 
     $user = new User();
-    
+
     if(isset($_POST['create'])) {
         if($user) {
-            $user->user_image = $_POST['user_image'];
             $user->username = $_POST['username'];
             $user->password = $_POST['password'];
             $user->first_name = $_POST['first_name'];
-            $user->second_name = $_POST['second_name'];
-            $user->save();
+            $user->last_name = $_POST['last_name'];
+            $user->set_file($_FILES['user_image']);
+            $user->save_user_and_image();
         }
 
     }
+
+    
     ?>
 
         <!-- Navigation -->
@@ -45,9 +47,7 @@
                                 <small>Subheading</small>
                             </h1>
                             <div class="col-md-6 col-md-offset-3">
-                                <div class="form-group">
-                                <img class="admin-user-thumbnail user_image" src="<?php echo $user->image_path_and_placeholder(); ?>" alt="">
-                                </div>
+                               
                                 <div class="form-group">
                                     <label for="user_image">User Image</label>
                                     <input type="file" name="user_image" class="form-control" id="">
@@ -66,7 +66,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="first_name">Last Name</label>
-                                    <input type="text" name="first_name" class="form-control" id="">
+                                    <input type="text" name="last_name" class="form-control" id="">
                                 </div>
                                 <div class="form-group">
                                     <input type="submit" name="create" class="btn btn-primary pull-right " value="Create">
