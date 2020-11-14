@@ -5,16 +5,16 @@
 <?php 
 
 if(empty($_GET['id'])) {
-    redirect("../photos.php"); // If the get request is empty send them back to photos
+    redirect("photos.php"); // If the get request is empty send them back to photos
 } 
 
 $photo = Photo::find_by_id($_GET['id']);
 
 if($photo) {
     $photo->delete_photo();
-    redirect("../photos.php");
+    redirect("photos.php");
 } else {
-    redirect("../photos.php"); // If the get request is empty send them back to photos
+    redirect("photos.php"); // If the get request is empty send them back to photos
 }
 
 ?>
