@@ -9,6 +9,10 @@ if(empty($_GET['id'])) {
 }
 
 $comments = Comment::find_the_comments($_GET['id']);
+if(count($comments) == 0) {
+    $session->message("No comments to view");
+    redirect("photos.php");
+}
 ?>
 
         <!-- Navigation -->
@@ -32,8 +36,9 @@ $comments = Comment::find_the_comments($_GET['id']);
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Comments
+                            Comments<small class="bg-success"> <?php echo $session->message; ?></small>
                         </h1>
+                        
                         <div class="col-md-12">
                         <table class="table table-hover">
                             <thead>
@@ -56,7 +61,7 @@ $comments = Comment::find_the_comments($_GET['id']);
                                         <td><?php echo $comment->photo_id; ?></td>                                    
                                         <td><?php echo $comment->author; ?></td>
                                         <td><?php echo $comment->body; ?></td>
-                                        <td><a class="btn btn-danger" href="delete_comment.php?id=<?php echo $comment->id;?>"><i class="fa fa-trash-o"></i></a></td>
+                                        <td><a class="btn btn-danger" href="delete_comment_photo.php?id=<?php echo $comment->id;?>"><i class="fa fa-trash-o"></i></a></td>
                                     </tr>
                                     <?php endforeach; ?>
                             </tbody>
