@@ -35,6 +35,7 @@
                                     <th>Filename</th>
                                     <th>Title</th>
                                     <th>Size</th>
+                                    <th>Comments</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -54,6 +55,22 @@
                                     <td><?php echo $photo->filename; ?></td>
                                     <td><?php echo $photo->title; ?></td>
                                     <td><?php echo $photo->size; ?></td>
+                                    <td><?php 
+                                    
+                                        $comments = Comment::find_the_comments($photo->id);
+                                        count($comments); 
+                                        ?>
+                                        <a class="btn btn-info" href="comment_photo.php?id=<?php echo $photo->id;?>">
+                                        <?php if(count($comments) == 0) {
+                                            echo "No Comments";
+                                            } elseif(count($comments) == 1) {
+                                                echo "View 1 Comment";
+                                                } else {
+                                                    echo "View " . count($comments) .  " Comments";
+                                                    }?> </a>
+                                    
+                                    </td>
+
                                     </tr>
                                     <?php endforeach; ?>
                             </tbody>
