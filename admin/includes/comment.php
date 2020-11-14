@@ -9,7 +9,24 @@ class Comment extends Db_object {
     public $author;
     public $body;
 
-    
+    public static function create_comment($photo_id, $author, $body) {
+        // Make sure nothings not empty.
+        if(!empty($photo_id) && !empty($author) && !empty($body)) {
+            $comment = new Comment();
+
+            $comment->photo_id  = (int)$photo_id; // Makes sure the value is an integer.
+            $comment->author    = $author;
+            $comment->body      = $body;
+            
+            return $comment;
+        }   else {
+            return false;
+        }
+
+
+
+
+    }
 
 
 
@@ -19,6 +36,6 @@ class Comment extends Db_object {
 
 
 
-    
+
 } // End of Comment Class
 ?>
