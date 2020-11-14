@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Description</label>
-                                    <textarea name="description" class="form-control" cols="30" rows="10" id="" ><?php echo $photo->description; ?></textarea>
+                                    <textarea name="description" class="form-control" cols="30" rows="10" id="body" ><?php echo $photo->description; ?></textarea>
                                 </div>   
                             </div>
                         </div> <!-- End of Col -->
