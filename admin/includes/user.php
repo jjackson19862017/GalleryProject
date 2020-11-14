@@ -3,13 +3,13 @@
 class User extends Db_object {
 
     protected static $db_table = "users";
-    protected static $db_table_fields = array('user_image','username','password','first_name','last_name');
+    protected static $db_table_fields = array('username','password','first_name','last_name','user_image');
     public $id;
-    public $user_image;
     public $username;
     public $password;
     public $first_name;
     public $last_name;
+    public $user_image;
     public $upload_directory = "images";
     public $image_placeholder = "http://placehold.it/400x400&text=image";
 
@@ -32,6 +32,15 @@ class User extends Db_object {
 
         $the_result_array = self::find_by_query($sql);
         return !empty($the_result_array) ? array_shift($the_result_array) : false ; 
+    }
+
+    public function delete_user() {
+        if($this->delete()) {
+            $target_path = IMAGES_PATH . DS . $this->filename;
+            return unlink($target_path) ? true : false;
+        } else {
+            return false;
+        }
     }
 
 }
