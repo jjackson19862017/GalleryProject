@@ -134,23 +134,7 @@ if(isset($_POST['submit'])) {
                 <!-- Blog Comments -->
 
                 <!-- Comment -->
-                <?php 
-                $comments = Comment::find_the_comments($photo->id);
-                foreach ($comments as $comment) : ?>
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="http://placehold.it/64x64" alt="">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading"><?php echo $comment->author; ?>
-                            <small>August 25, 2014 at 9:30 PM</small>
-                        </h4>
-                            <?php echo $comment->body; ?>
-
-                    </div>
-                </div>
-                <?php endforeach; ?>
-
+               
 
 
 
@@ -171,22 +155,27 @@ if(isset($_POST['submit'])) {
                         <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
                 <hr>
 
                 <!-- Posted Comments -->
+                <?php 
+                $comments = Comment::find_the_comments($photo->id);
+                foreach ($comments as $comment) : ?>
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="http://placehold.it/64x64" alt="">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading"><?php echo $comment->author; ?>
+                            <small>August 25, 2014 at 9:30 PM</small>
+                        </h4>
+                            <?php echo $comment->body; ?>
 
+                    </div>
+                </div>
+                
+                <?php endforeach; ?>
+                    <hr>
                 
 
             </div>
