@@ -46,10 +46,6 @@ class User extends Db_object {
 
     public function save_user_and_image() {
 
-        if($this->id) {
-            // If the ID is present run update
-            $this->update();
-        } else {
             if(!empty($this->errors)) {
                 return false; // This means we have an error.
             }
@@ -76,7 +72,6 @@ class User extends Db_object {
                     return false;
                 }
             }
-        }
     } // End of Save Class
 
     public function image_path_and_placeholder() {

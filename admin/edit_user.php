@@ -17,8 +17,16 @@
             $user->password = $_POST['password'];
             $user->first_name = $_POST['first_name'];
             $user->last_name = $_POST['last_name'];
-            $user->set_file($_FILES['user_image']);
-            $user->save_user_and_image();
+
+            if(empty($_FILES['user_image'])) {
+            $user->save();                
+            } else {
+                $user->set_file($_FILES['user_image']);
+                $user->save_user_and_image();
+                $user->save();  
+                
+                redirect("edit_user.php?id={$user->id}");
+            }
         }
 
     }
@@ -80,6 +88,7 @@
                                     <input type="text" name="last_name" class="form-control" id="" value="<?php echo $user->last_name ;?>">
                                 </div>
                                 <div class="form-group">
+                                    <a class="btn btn-danger pull-left" href="delete_user.php?id=<?php echo $user->id;?>"><i class="fa fa-trash-o"></i></a>
                                     <input type="submit" name="update" class="btn btn-primary pull-right " value="Update">
                                 </div>
                             </div>
