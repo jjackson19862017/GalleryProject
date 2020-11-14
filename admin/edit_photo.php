@@ -99,7 +99,7 @@
                                         </div>   
                                     </div>
                                     <hr>
-                                    <div class="img-thumbnail img-fluid">
+                                    <div class="admin-photo-thumbnail">
                                     <a href=""><img class="" src="<?php echo $photo->picture_path(); ?>" alt="<?php echo $photo->alt_text ; ?>"></a>
                                     </div>
                                 </div>          
