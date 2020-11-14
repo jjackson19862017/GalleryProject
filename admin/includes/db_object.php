@@ -3,6 +3,36 @@
 
 class Db_object {
 
+    public $errors = array();
+    public $upload_errors_array = array(
+        UPLOAD_ERR_OK          =>"There was no error",
+        UPLOAD_ERR_INI_SIZE    =>"There is error in ini size",
+        UPLOAD_ERR_FORM_SIZE   =>"There is error in form size",
+        UPLOAD_ERR_PARTIAL     =>"The uploaded file was only partially uploaded",
+        UPLOAD_ERR_NO_FILE     =>"There is no file was uploaded",
+        UPLOAD_ERR_NO_TMP_DIR  =>"There is missing a temporary folder ",
+        UPLOAD_ERR_CANT_WRITE  =>"Filed to write file to disk",
+        UPLOAD_ERR_EXTENSION   =>"A php extension stopped the file upload"
+    );
+    
+    // This is passing $_FILES['uploaded_file'] as an argument
+    public function set_file($file) {
+
+        // Checking if empty
+        if(empty($file) || !$file || !is_array($file)) {
+            $this->errors[] = "There was no file uploaded here";
+            return false;
+        } elseif($file['error'] != 0) {
+            $this->errors[] = $this->upload_errors_array[$file['error']];
+            return false;
+        } else { // If there are no errors then set the following variables 
+            $this->user_image = basename($file['name']);  // Basename cleans up the incoming user_image
+            $this->tmp_path = $file['tmp_name'];
+            $this->type     = $file['type'];
+            $this->size     = $file['size'];
+        }
+    } // End set_file
+
     public static function find_by_query($sql) {
         global $database;
         $result_set = $database->query($sql);
