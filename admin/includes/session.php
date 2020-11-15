@@ -5,13 +5,24 @@ class Session {
     private $signed_in = false;
     public $user_id;
     public $message;
+    public $count;
 
 
     // Auto starts a session each time its run
     function __construct(){
         session_start();
+        $this->visitor_count();
         $this->check_the_login();
         $this->check_message();
+    }
+
+    //Visitor Counter
+    public function visitor_count() {
+        if(isset($_SESSION['count'])) {
+            return $this->count = $_SESSION['count']++;
+        } else {
+            return $_SESSION['count'] = 1;
+        }
     }
 
     // Enables to give the user feedback on what has happened
