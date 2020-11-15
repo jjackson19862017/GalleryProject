@@ -11,11 +11,14 @@ if(isset($_POST['submit'])) {
     $photo = new Photo();
     $photo->title = $_POST['title'];
     $photo->set_file($_FILES['file_upload']);
-
-    if($photo->save()) {
-        $message = "Photo uploaded Successfully";
+    if(!empty($photo->title)) {
+        if($photo->save()) {
+            $message = "Photo uploaded Successfully";
+        } else {
+            $message = join("<br>", $photo->errors);
+        }
     } else {
-        $message = join("<br>", $photo->errors);
+        $message = "Please give the photo a title.";
     }
 }
 

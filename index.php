@@ -6,7 +6,7 @@
                 <div class="thumbnails row">
                     <?php foreach ($photos as $photo):?>
                         <div class="col-xs-6 col-md-3">
-                            <a class="thumbnail" href="">
+                            <a class="thumbnail" href="photo.php?id=<?php echo $photo->id ?>">
                             <img class="img-responsive home_page_photo" src="admin/<?php echo $photo->picture_path();?>" alt="">
                             </a>
                         </div> <!-- /.col-xs-6 col-md-3 -->

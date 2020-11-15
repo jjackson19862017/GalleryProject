@@ -40,45 +40,36 @@ if(isset($_POST['submit'])) {
         <div class="row">
 
             <!-- Blog Post Content Column -->
-            <div class="col-lg-8">
+            <div class="col-md-12">
 
                 <!-- Blog Post -->
 
                 <!-- Title -->
-                <h1><?php echo $photo->title ;?></h1>
+                <h1><?php //Makes sure Title has a value
+                if(!empty($photo->title)) {
+                    echo $photo->title;
+                } else {
+                    echo "Untitled";
+                }
+                ?></h1>
 
-                <!-- Author -->
+                <!-- Caption -->
                 <p class="lead">
-                    by <a href="#">Start Bootstrap</a>
+                    <a href="#"><?php echo $photo->caption ;?></a>
                 </p>
 
                 <hr>
 
-                <!-- Date/Time -->
-                <p><span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM</p>
-
-                <hr>
-
                 <!-- Preview Image -->
-                <img class="img-responsive" src="<?php echo $photo->picture_path(); ?>" alt="">
+                <img class="img-responsive" src="admin/<?php echo $photo->picture_path(); ?>" alt="<?php echo $photo->alt_text ;?>">
 
                 <hr>
 
                 <!-- Post Content -->
-                <p class="lead"></p>
+                <p class="lead"><?php echo $photo->description ;?></p>
 
                 <hr>
-
-                <!-- Blog Comments -->
-
                 <!-- Comment -->
-               
-
-
-
-
-
-
                 <div class="well">
                     <h4>Leave a Comment:</h4>
                     <form role="form" method="post">
@@ -114,22 +105,10 @@ if(isset($_POST['submit'])) {
                 
                 <?php endforeach; ?>
                     <hr>
-                
-
-            </div>
-
-            <!-- Blog Sidebar Widgets Column -->
-            <div class="col-md-4">
-
-            <?php include("includes/sidebar.php"); ?>
-               
-
-            </div>
+                </div>
 
         </div>
         <!-- /.row -->
-
-        <hr>
 
         <!-- Footer -->
         

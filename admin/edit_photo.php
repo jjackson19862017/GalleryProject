@@ -100,7 +100,7 @@
                                     </div>
                                     <hr>
                                     <div class="admin-photo-thumbnail">
-                                    <a href=""><img class="" src="<?php echo $photo->picture_path(); ?>" alt="<?php echo $photo->alt_text ; ?>"></a>
+                                    <a href=""><img class="img-responsive home_page_photo" src="<?php echo $photo->picture_path(); ?>" alt="<?php echo $photo->alt_text ; ?>"></a>
                                     </div>
                                 </div>          
                             </div>
