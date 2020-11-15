@@ -27,6 +27,21 @@ $(document).ready(function(){
         photo_id = $(this).attr("data");
         // Test alert(image_name);
 
+        photo_id = $(this).attr("data"); // Grabs the input from the data quotes in the photo_library_modal
+
+        $.ajax({
+
+            url: "includes/ajax_code.php",
+            data:{photo_id:photo_id}, // Setting Objects
+            type:"POST", // Catching the post super global
+            success:function(data){
+                if(!data.error) {
+                    $("#modal_sidebar").html(data); // This replaces the reload option from before
+                }
+
+
+            }
+        });
 
     });
 
