@@ -39,7 +39,7 @@ $(document).ready(function(){
             type:"POST", // Catching the post super global
             success:function(data){
                 if(!data.error) {
-                    location.reload(true);
+                    $(".user_image_box a img").prop('src', data); // This replaces the reload option from before
                 }
 
 
