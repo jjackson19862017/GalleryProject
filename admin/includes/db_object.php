@@ -148,6 +148,16 @@ class Db_object {
         return (mysqli_affected_rows($database->connection) == 1) ? true : false; 
     }
 
+    //Counting Method
+    public static function count_all() {
+        global $database;
+
+        $sql = "SELECT COUNT(*) FROM " . static::$db_table . " ";
+        $result_set = $database->query($sql);
+        $row = mysqli_fetch_array($result_set);
+        return array_shift($row);
+    }
+
 } // End of Db_object Class
 
 ?>
