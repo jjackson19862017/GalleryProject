@@ -26,84 +26,108 @@
                             Blank Page
                             <small>Subheading</small>
                         </h1>
+                        <?php include("tests.php");?>
+                        <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-users fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">4</div>
+                                        <div>New Views</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                  <span class="pull-left">View Details</span> 
+                               <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span> 
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                     <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-photo fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">7</div>
+                                        <div>Photos</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Total Photos in Gallery</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+                     <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-user fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">8
+
+                                        </div>
+
+                                        <div>Users</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Total Users</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                      <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-support fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">8</div>
+                                        <div>Comments</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Total Comments</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+                        </div> <!--First Row-->
+
                         
-                        <?php 
-                        // Create a New User
-                        /*
-                        $user = new User();
-                        $user->username     = "Bazza";
-                        $user->password     = "dad";                        
-                        $user->first_name   = "Barry";                        
-                        $user->last_name    = "Jackson";                        
-                        $user->create();*/
-
-                        // Update User
-                        /*
-                        $user = User::find_by_id(4);
-                        $user->username     = "Loser";
-                        $user->password     = "dad";                        
-                        $user->first_name   = "Barry";                        
-                        $user->last_name    = "Jackson";                        
-                        $user->update(); */
-
-                        //Delete User
-                        /*
-                        $user = User::find_by_id(6);
-                        $user->delete(); */
-
-                        // Smart Update function
-                        /*
-                        $user = User::find_by_id(3);
-                        $user->username = "dad";
-                        $user->save(); */
-                        
-                        // Smart Create function
-                        /*
-                        $user = new User();
-                        $user->username = "Bob";
-                        $user->save(); */
-
-                        // Find All Users
-                        /*
-                        $users = User::find_all();
-                        foreach ($users as $user) {
-                            echo $user->id . " -> " . $user->username . "<br>";
-                        } */
-
-                        // Find User by Id
-                        /*
-                        $user = User::find_by_id(11);
-                        echo $user->id . " -> " . $user->username . "<br>";
-                        */
-
-                        // Create a New Photo
-                        /*
-                        $photo = new Photo();
-                        $photo->title = "Bazza";
-                        $photo->description = "dad";                        
-                        $photo->filename = "Barry";                        
-                        $photo->type = "jpg";
-                        $photo->size = 100;                        
-                        $photo->create();*/
-
-                        // Find All Photos
-                        /*
-                        $photos = Photo::find_all();
-                        foreach ($photos as $photo) {
-                            echo $photo->id . " -> " . $photo->title . "<br>";
-                        } 
-                        */
-
-                        // Find Photo by Id
-                        /*
-                        $photo = Photo::find_by_id(4);
-                        echo $photo->id . " -> " . $photo->title . "<br>";
-                        /*
-                        
-                        // Show Path Directory
-                        // echo INCLUDES_PATH;
-                        // echo SITE_ROOT;
-                        */?>
                     </div>
                 </div>
                 <!-- /.row -->
