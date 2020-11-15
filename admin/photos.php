@@ -46,11 +46,7 @@
                                     foreach ($photos as $photo) : ?>
                                     <tr>
                                     <td><img class="admin-photo-thumbnail" src="<?php echo $photo->picture_path(); ?>" alt="">
-                                    <div class="action_links">
-                                    <a class="btn btn-danger" href="delete_photo.php?id=<?php echo $photo->id;?>"><i class="fa fa-trash-o"></i></a>
-                                    <a class="btn btn-primary" href="edit_photo.php?id=<?php echo $photo->id;?>"><i class="fa fa-pencil"></i></a>
-                                    <a class="btn btn-success" href="../photo.php?id=<?php echo $photo->id;?>"><i class="fa fa-eye"></i></a>
-                                    </div></td>
+                                    </td>
                                     <td><?php echo $photo->id; ?></td>
                                     <td><?php echo $photo->filename; ?></td>
                                     <td><?php echo $photo->title; ?></td>
@@ -68,7 +64,12 @@
                                                 } else {
                                                     echo "View " . count($comments) .  " Comments";
                                                     }?> </a>
-                                    
+                                                    <hr>
+                                    <div class="action_links">
+                                    <a class="btn btn-danger" href="delete_photo.php?id=<?php echo $photo->id;?>"><i class="fa fa-trash-o"></i></a>
+                                    <a class="btn btn-primary" href="edit_photo.php?id=<?php echo $photo->id;?>"><i class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-success" href="../photo.php?id=<?php echo $photo->id;?>"><i class="fa fa-eye"></i></a>
+                                    </div>
                                     </td>
 
                                     </tr>
