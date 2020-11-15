@@ -17,7 +17,7 @@
                 
                <div class="col-xs-2">
                  <a role="checkbox" aria-checked="false" tabindex="0" id="" href="#" class="thumbnail">
-                   <img class="modal_thumbnails img-responsive" src="<?php echo $photo->picture_path(); ?>" data="<!-- PHP CODE HERE-->">
+                   <img id="modal_thumbnails" class="modal_thumbnails img-responsive" src="<?php echo $photo->picture_path(); ?>" data="<!-- PHP CODE HERE-->">
                  </a>
                   <div class="photo-id hidden"></div>
                </div>
