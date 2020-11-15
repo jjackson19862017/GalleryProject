@@ -56,7 +56,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h1 class="page-header">
-                                Add user
+                                Edit User
                                 <small class="bg-success"> <?php echo $session->message; ?></small>
                             </h1>
                             <div class="col-md-6">
@@ -88,7 +88,7 @@
                                     <input type="text" name="last_name" class="form-control" id="" value="<?php echo $user->last_name ;?>">
                                 </div>
                                 <div class="form-group">
-                                    <a class="btn btn-danger pull-left" href="delete_user.php?id=<?php echo $user->id;?>"><i class="fa fa-trash-o"></i></a>
+                                    <a id="user-id" class="btn btn-danger pull-left" href="delete_user.php?id=<?php echo $user->id;?>"><i class="fa fa-trash-o"></i></a>
                                     <input type="submit" name="update" class="btn btn-primary pull-right " value="Update">
                                 </div>
                             </div>
