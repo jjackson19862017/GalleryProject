@@ -44,7 +44,8 @@
                         <div class="col-md-12">
                             <h1 class="page-header">
                                 Add user
-                                <small>Subheading</small>
+                                <small class="bg-success"> <?php echo $session->message; ?></small>
+
                             </h1>
                             <div class="col-md-6 col-md-offset-3"> <!-- Centers the form on the center of the screen -->
                                

@@ -24,6 +24,7 @@
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             Users
+                            <small class="bg-success"> <?php echo $session->message; ?></small>
                             <a class="btn btn-success" href="add_user.php">Add User</a>
                         </h1>
                         <div class="col-md-12">

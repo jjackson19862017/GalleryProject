@@ -57,7 +57,7 @@
                         <div class="col-lg-12">
                             <h1 class="page-header">
                                 Add user
-                                <small><?php echo $user->id ;?></small>
+                                <small class="bg-success"> <?php echo $session->message; ?></small>
                             </h1>
                             <div class="col-md-6">
                             

@@ -46,7 +46,8 @@
                         <div class="col-md-8">
                             <h1 class="page-header">
                                 Edit Photo
-                                <small>Subheading</small>
+                            <small class="bg-success"> <?php echo $session->message; ?></small>
+
                             </h1>
                             <div class="col-md-12">
                                 <div class="form-group">
