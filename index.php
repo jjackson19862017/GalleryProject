@@ -7,7 +7,7 @@
                     <?php foreach ($photos as $photo):?>
                         <div class="col-xs-6 col-md-3">
                             <a class="thumbnail" href="">
-                            <img src="admin/<?php echo $photo->picture_path();?>" alt="">
+                            <img class="img-responsive home_page_photo" src="admin/<?php echo $photo->picture_path();?>" alt="">
                             </a>
                         </div> <!-- /.col-xs-6 col-md-3 -->
                     <?php endforeach; ?>
