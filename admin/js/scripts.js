@@ -37,7 +37,7 @@ $(document).ready(function(){
             type:"POST", // Catching the post super global
             success:function(data){
                 if(!data.error) {
-                    alert(image_name);
+                    alert(data);
                 }
 
 
