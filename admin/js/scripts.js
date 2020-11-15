@@ -7,6 +7,7 @@ $(document).ready(function(){
     var image_source;
     var image_href_splitted;
     var image_name;
+    var photo_id;
     
     $(".modal_thumbnails").click(function(){
 
@@ -23,6 +24,7 @@ $(document).ready(function(){
         image_source = $(this).prop('src');
         image_href_splitted = image_source.split("/"); // Splits the string at the /
         image_name = image_href_splitted[image_href_splitted.length -1]; // Finds the length of the array
+        photo_id = $(this).attr("data");
         // Test alert(image_name);
 
 
@@ -37,7 +39,7 @@ $(document).ready(function(){
             type:"POST", // Catching the post super global
             success:function(data){
                 if(!data.error) {
-                    alert(data);
+                    location.reload(true);
                 }
 
 
