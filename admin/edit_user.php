@@ -1,5 +1,5 @@
 <?php include("includes/header.php"); ?>
-<?php include("modal.php"); ?>
+<?php include("includes/photo_library_modal.php"); ?>
 <?php if(!$session->is_signed_in()) { redirect("login.php");} // Checks to see if the user is logged in ?>
 
 <?php
