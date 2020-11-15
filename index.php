@@ -1,5 +1,14 @@
 <?php include("includes/header.php"); ?>
 
+<?php
+
+// Pagination Variables
+$page = !empty($_GET['page']) ? (int)$_GET['page'] : 1; // If not set, then its 1
+$items_per_page = 4;
+$items_total_count = Photo::count_all();
+$photos = Photo::find_all();
+?>
+
 <?php $photos = Photo::find_all() ?>
         <div class="row">
             <div class="col-md-12">
