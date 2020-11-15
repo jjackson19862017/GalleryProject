@@ -16,7 +16,6 @@ $photos = Photo::find_by_query($sql);
 
 ?>
 
-<?php $photos = Photo::find_all() ?>
         <div class="row">
             <div class="col-md-12">
                 <div class="thumbnails row">
