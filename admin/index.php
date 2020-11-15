@@ -23,7 +23,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Blank Page
+                            Dashboard
                             <small>Subheading</small>
                         </h1>
                         <?php include("tests.php");?>
@@ -126,7 +126,8 @@
 
 
                         </div> <!--First Row-->
-
+<div class="row">
+<div id="piechart" style="width: 100vw; height: 500px;"></div></div>
                         
                     </div>
                 </div>
