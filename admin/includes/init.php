@@ -19,5 +19,6 @@ require_once("user.php");
 require_once __DIR__ . DS . 'photo.php'; // It could find the page, im guessing becoz the filenames were the same
 require_once("comment.php");
 require_once("session.php");
+require_once("paginate.php");
 //echo "Init Loaded";
 ?>
