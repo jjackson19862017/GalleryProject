@@ -24,7 +24,6 @@
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             comments
-                            <a class="btn btn-success" href="add_comment.php">Add comment</a>
                         </h1>
                         <div class="col-md-12">
                         <table class="table table-hover">
