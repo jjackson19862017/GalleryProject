@@ -84,7 +84,7 @@ $(document).ready(function(){
     /******************* DELETE CONFIRM ***************/
     $(".delete_link").click(function() {
 
-        return confirm("Are you sure you want to Delete?");
+        return confirm("Are you sure?");
 
 
 

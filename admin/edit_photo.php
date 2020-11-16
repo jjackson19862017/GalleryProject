@@ -95,7 +95,7 @@
                                         </p>
                                     </div>
                                     <div class="info-box-footer clearfix">
-                                        <div class="info-box-delete pull-left">
+                                        <div class="info-box-delete pull-left delete_link">
                                             <a  href="delete_photo.php?id=<?php echo $photo->id; ?>" class="btn btn-danger btn-lg ">Delete</a>   
                                         </div>
                                         <div class="info-box-update pull-right ">

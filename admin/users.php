@@ -50,7 +50,7 @@
                                     
                                     <td><?php echo $user->username; ?>
                                     <div class="actions_links">
-                                    <a class="btn btn-danger" href="delete_user.php?id=<?php echo $user->id;?>"><i class="fa fa-trash-o"></i></a>
+                                    <a class="btn btn-danger delete_link" href="delete_user.php?id=<?php echo $user->id;?>"><i class="fa fa-trash-o"></i></a>
                                     <a class="btn btn-primary" href="edit_user.php?id=<?php echo $user->id;?>"><i class="fa fa-pencil"></i></a>
                                     </div></td>
                                     <td><?php echo $user->first_name; ?></td>

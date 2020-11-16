@@ -90,7 +90,7 @@
                                     <input type="text" name="last_name" class="form-control" id="" value="<?php echo $user->last_name ;?>">
                                 </div>
                                 <div class="form-group">
-                                    <a id="user-id" class="btn btn-danger pull-left" href="delete_user.php?id=<?php echo $user->id;?>"><i class="fa fa-trash-o"></i></a>
+                                    <a id="user-id" class="btn btn-danger pull-left delete_link" href="delete_user.php?id=<?php echo $user->id;?>"><i class="fa fa-trash-o"></i></a>
                                     <input type="submit" name="update" class="btn btn-primary pull-right " value="Update">
                                 </div>
                             </div>
