@@ -9,6 +9,8 @@ $(document).ready(function(){
     var image_name;
     var photo_id;
     
+    /**************** Photo Gallery Selector ***************/
+
     $(".modal_thumbnails").click(function(){
 
         $("#set_user_image").prop('disabled', false); // Enables the button on the modal
@@ -71,9 +73,13 @@ $(document).ready(function(){
     });
 
 
+    /**************** Edit Photo Sidebar ***************/
 
 
-
+    $(".info-box-header").click(function() {
+        $(".inside").slideToggle("fast");
+        $("#toggle").toggleClass("glyphicon-menu-down glyhicon, glyphicon-menu-up glyhicon");
+    });
 
 
 

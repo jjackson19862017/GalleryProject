@@ -54,6 +54,9 @@
                                     <label for="title">Title</label>
                                     <input type="text" name="title" class="form-control" id="" value="<?php echo $photo->title ; ?>">
                                 </div>
+                                <div class="admin-photo-thumbnail">
+                                    <a href=""><img class="img-responsive home_page_photo" src="<?php echo $photo->picture_path(); ?>" alt="<?php echo $photo->alt_text ; ?>"></a>
+                                    </div>
                                 <div class="form-group">
                                     <label for="caption">Caption</label>
                                     <input type="text" name="caption" class="form-control" id="" value="<?php echo $photo->caption ; ?>">
@@ -99,10 +102,7 @@
                                             <input type="submit" name="update" value="Update" class="btn btn-primary btn-lg ">
                                         </div>   
                                     </div>
-                                    <hr>
-                                    <div class="admin-photo-thumbnail">
-                                    <a href=""><img class="img-responsive home_page_photo" src="<?php echo $photo->picture_path(); ?>" alt="<?php echo $photo->alt_text ; ?>"></a>
-                                    </div>
+                                    
                                 </div>          
                             </div>
 
