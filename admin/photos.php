@@ -66,7 +66,7 @@
                                                     }?> </a>
                                                     <hr>
                                     <div class="action_links">
-                                    <a class="btn btn-danger" href="delete_photo.php?id=<?php echo $photo->id;?>"><i class="fa fa-trash-o"></i></a>
+                                    <a class="btn btn-danger delete_link" href="delete_photo.php?id=<?php echo $photo->id;?>"><i class="fa fa-trash-o"></i></a>
                                     <a class="btn btn-primary" href="edit_photo.php?id=<?php echo $photo->id;?>"><i class="fa fa-pencil"></i></a>
                                     <a class="btn btn-success" href="../photo.php?id=<?php echo $photo->id;?>"><i class="fa fa-eye"></i></a>
                                     </div>

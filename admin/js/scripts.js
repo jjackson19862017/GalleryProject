@@ -81,7 +81,16 @@ $(document).ready(function(){
         $("#toggle").toggleClass("glyphicon-menu-down glyhicon, glyphicon-menu-up glyhicon");
     });
 
+    /******************* DELETE CONFIRM ***************/
+    $(".delete_link").click(function() {
 
+        return confirm("Are you sure you want to Delete?");
+
+
+
+    });
+
+    
 
 
 
