@@ -122,5 +122,15 @@ class User extends Db_object {
 		echo $this->image_path_and_placeholder();
     }
 
+    public function delete_photo() {
+        if($this->delete()) {
+            $target_path = IMAGES_PATH . DS . $this->user_image;
+            return unlink($target_path) ? true : false;
+            $session->message("User Deleted");
+        } else {
+            return false;
+        }
+    }
+
 } // End of Class
 ?>

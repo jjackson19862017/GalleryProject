@@ -13,7 +13,8 @@
             $user->first_name = $_POST['first_name'];
             $user->last_name = $_POST['last_name'];
             $user->set_file($_FILES['user_image']);
-            $user->save_user_and_image();
+            $user->upload_photo();
+            $user->save();
         }
 
     }
