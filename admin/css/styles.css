@@ -94,3 +94,8 @@
   
   }
   
+   /************* LOGIN PAGE *****************/
+
+   .login-id label {
+     background-color: gray!important;
+   }
