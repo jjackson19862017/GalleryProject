@@ -7,10 +7,10 @@
 $message = '';
 
 // Function for uploading photos to the gallery
-if(isset($_POST['submit'])) {
+if(isset($_FILES['file'])) {
     $photo = new Photo();
     $photo->title = $_POST['title'];
-    $photo->set_file($_FILES['file_upload']);
+    $photo->set_file($_FILES['file']);
     if(!empty($photo->title)) {
         if($photo->save()) {
             $message = "Photo uploaded Successfully";
@@ -18,7 +18,12 @@ if(isset($_POST['submit'])) {
             $message = join("<br>", $photo->errors);
         }
     } else {
-        $message = "Please give the photo a title.";
+        $photo->title = "Untitled";
+        if($photo->save()) {
+            $message = "Photo uploaded Successfully";
+        } else {
+            $message = join("<br>", $photo->errors);
+        }
     }
 }
 
@@ -53,23 +58,27 @@ if(isset($_POST['submit'])) {
                             Upload
                             <small><?php echo $message ?></small>
                         </h1>
-                        <div class="col-md-6">
-                        <form action="upload.php" enctype="multipart/form-data" method="post" class="well">
-                            <div class="form-group">
-                                <input type="text" name="title" class="form-control" id="">
-                            </div>
-                            <div class="form-group">
-                                <input type="file" name="file_upload" class="" id="">
-                            </div>
-                                <input type="submit" name="submit" class="btn btn-primary" id="">
-                        </form>
-                       </div>
-
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                                <form action="upload.php" enctype="multipart/form-data" method="post" class="well">
+                                    <div class="form-group">
+                                        <input type="text" name="title" class="form-control" id="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="file" name="file" class="" id="">
+                                    </div>
+                                        <input type="submit" name="submit" class="btn btn-primary" id="">
+                                </form>
+                            </div> <!-- /. col-md-6 -->
+                       </div> <!-- /. Row-->
 
                     </div>
                 </div>
                 <!-- /.row -->
-
+                <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                <form action="upload.php" class="dropzone"></form></div>
+                </div>
             </div>
             <!-- /.container-fluid -->
         </div>
