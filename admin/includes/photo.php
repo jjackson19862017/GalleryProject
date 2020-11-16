@@ -3,7 +3,7 @@
 class Photo extends Db_object {
 
     protected static $db_table = "photos";
-    protected static $db_table_fields = array('title','caption','description','filename','alt_text','type','size');
+    protected static $db_table_fields = array('title','caption','description','filename','alt_text','type','size', 'user_id');
     public $id;
     public $title;
     public $caption;
@@ -12,6 +12,7 @@ class Photo extends Db_object {
     public $alt_text;
     public $type;
     public $size;
+    public $user_id;
 
     public $tmp_path;
     public $upload_directory = "images";
@@ -32,6 +33,7 @@ class Photo extends Db_object {
             $this->tmp_path = $file['tmp_name'];
             $this->type     = $file['type'];
             $this->size     = $file['size'];
+
         }
     } // End set_file
 

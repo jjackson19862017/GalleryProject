@@ -42,7 +42,8 @@
                                 
                                     <?php 
                                     
-                                    $photos = Photo::find_all();
+                                    // $photos = Photo::find_all();
+                                    $photos = User::find_by_id($_SESSION['user_id'])->photos();
                                     foreach ($photos as $photo) : ?>
                                     <tr>
                                     <td><img class="admin-photo-thumbnail" src="<?php echo $photo->picture_path(); ?>" alt="">

@@ -10,6 +10,7 @@ $message = '';
 if(isset($_FILES['file'])) {
     $photo = new Photo();
     $photo->title = $_POST['title'];
+    $photo->user_id = $_SESSION['user_id'];
     $photo->set_file($_FILES['file']);
     if(!empty($photo->title)) {
         if($photo->save()) {
