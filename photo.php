@@ -51,7 +51,7 @@ if(isset($_POST['submit'])) {
                 } else {
                     echo "Untitled";
                 }
-                ?></h1>
+                ?><small class="bg-success"> <?php echo $session->message; ?></small></h1>
 
                 <!-- Caption -->
                 <p class="lead">
@@ -81,6 +81,7 @@ if(isset($_POST['submit'])) {
                             <label for="body">Comment</label>
                             <textarea class="form-control" name="body" id="body" rows="5"></textarea>
                         </div>
+                            
                         <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>

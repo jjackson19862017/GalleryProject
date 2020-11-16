@@ -14,7 +14,9 @@
             $user->last_name = $_POST['last_name'];
             $user->set_file($_FILES['user_image']);
             $user->upload_photo();
+            $session->message("{$user->username} has been created");
             $user->save();
+            redirect("users.php");
         }
 
     }

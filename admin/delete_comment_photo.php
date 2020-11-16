@@ -15,6 +15,8 @@ if($comment) {
     $session->message("The comment with {$comment->id} has been deleted");
     redirect("comment_photo.php?id={$comment->photo_id}");
 } else {
+    $session->message("The comment with {$comment->id} has NOT BEEN deleted");
+
     redirect("comment_photo.php?id={$comment->photo_id}");
     // If the get request is empty send them back to comments
 }

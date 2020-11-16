@@ -19,7 +19,10 @@ class Comment extends Db_object {
             $comment->body      = $body;
             
             return $comment;
+            $session->message("The comment has been created!");
+
         }   else {
+            $session->message("Comment Failed.");
             return false;
         }
     } // End of create_comment
