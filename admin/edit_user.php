@@ -19,13 +19,15 @@
             $user->last_name = $_POST['last_name'];
 
             if(empty($_FILES['user_image'])) {
-            $user->save();                
+            $user->save();
+            $session->message("Details Updated.");
+            redirect("users.php");
             } else {
                 $user->set_file($_FILES['user_image']);
                 $user->upload_photo();
                 $user->save();  
-                
-                redirect("edit_user.php?id={$user->id}");
+                $session->message("Details Updated.");
+                redirect("users.php");
             }
         }
 

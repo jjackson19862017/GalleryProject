@@ -78,6 +78,7 @@ class Photo extends Db_object {
         if($this->delete()) {
             $target_path = IMAGES_PATH . DS . $this->filename;
             return unlink($target_path) ? true : false;
+            $session->message("Photo Deleted");
         } else {
             return false;
         }
